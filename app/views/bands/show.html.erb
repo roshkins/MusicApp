@@ -6,7 +6,13 @@
 
 	<ul>
 	<% @band.albums.each do |album| %>
-		<li><a href="<%= album_url(album) %>"> <%= album.name %></a> </li>
+		<li><a href="<%= album_url(album) %>"> <%= album.name %></a></li>
+			<ul>
+				<% album.tracks.each do |track| %>
+				<a href=<%= track_url(track) %>><%= track.name %></a>
+				<% end %>
+			</ul>
+
 	<% end %>
 	</ul>
 <% end %>

@@ -8,6 +8,26 @@
 	 type="text" name="album[name]" id="album_name"
 	 value="<%= album.name %>">
 	 <br>
+	 <label for= "album_band_id">Released by:</label>
+	 <select id="album_band_id" name="album[band_id]">
+		 <%Band.all.each do |band_thing|%>
+		 <option value="<%= band_thing.id%>"><%= band_thing.name%></option>
+		 <%end%>
+	 </select>
+	 <br>
+ Album type:<br>
+ <input type="radio" name="album[album_type]"
+ value="studio" id="album_album_type_studio"
+ <%= "checked" if album.album_type == "studio" %>>
 
+ <label for="album_album_type_studio">Studio</label>
+ <br>
+
+ <input type="radio" name="album[album_type]"
+ id="album_album_type_live" value="live"
+  <%= "checked" if album.album_type == "live" %>>
+
+ <label for="album_album_type_live">Live</label>
+ <br>
  <input type="submit" value="Save album">
 </form>

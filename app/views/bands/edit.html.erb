@@ -1,5 +1,5 @@
 <h1>Edit the Band</h1>
 
 <%= render :partial => "form", :locals => {:band => @band} %>
-
+<%= button_to "Click for utter destruction", band_url(@band), :method => :delete, :confirm => "Are you sure you want to demolish this band? They haven't harmed you... yet."%>
 <a href="<%= band_url(@band) %>">Go back to the band</a>

@@ -1,2 +1,3 @@
 <h1>Edit this Album:</h1>
 <%= render :partial => "form", :locals => {:album => @album, :band => @band} %>
+<%= button_to "Click for utter destruction", album_url(@album) , :method => :delete, :confirm => "Are you sure you want to demolish this album? It hasn't harmed you... yet."%>

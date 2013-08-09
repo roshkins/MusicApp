@@ -1,0 +1,12 @@
+<h1><%= @track.name %> </h1>
+<h2>from <a href="<%= album_url(@track.album) %>"><%= @track.album.name %></a></h2>
+<h3>by <a href="<%= band_url(@track.band) %>"> <%= @track.band.name %></a></h3>
+
+<pre><%= @track.lyrics %></pre> <br>
+<strong>Story:</strong> <%= @track.story %>
+<br>
+
+<% render :partial => "" %>
+
+<a href="<%= edit_track_url(@track) %>">Incorrect? It's probably just you. But just in case you can click here.'</a>
+

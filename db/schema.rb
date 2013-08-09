@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(:version => 20130809185521) do
     t.integer  "band_id",                          :null => false
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
-    t.string   "type",       :default => "studio", :null => false
+    t.string   "album_type", :default => "studio", :null => false
   end
 
   add_index "albums", ["band_id"], :name => "index_albums_on_band_id"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20130809185521) do
     t.string   "story"
     t.datetime "created_at",                        :null => false
     t.datetime "updated_at",                        :null => false
-    t.string   "type",       :default => "regular", :null => false
+    t.string   "track_type", :default => "regular", :null => false
   end
 
   add_index "tracks", ["album_id"], :name => "index_tracks_on_album_id"

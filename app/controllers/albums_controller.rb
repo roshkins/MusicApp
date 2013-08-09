@@ -29,7 +29,7 @@ class AlbumsController < ApplicationController
       redirect_to album_url(@album)
     else
       flash[:message] = "Someone's wrong here"
-      redirect_to new_band_album(params[:band_id])
+      redirect_to new_band_album_url(params[:band_id])
     end
   end
 

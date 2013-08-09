@@ -1,5 +1,5 @@
 <h1><%= @album.name %></h1>
-<h3>By <%= @album.band.name %></h3>
+<h3>A <%= @album.album_type%> album by <a href= "<%= band_url(@album.band) %>"><%= @album.band.name %></h3>
 <ul>
 <% @album.tracks.each do |track| %>
 <li><a href= "<%= track_url(track) %>"><%= track.name %></a></li>

@@ -16,6 +16,27 @@
  <%= track.story %>">
  <br>
 
+ <label for="track_album_id">Album:</label>
+ <select id="track_album_id" name="track[album_id]">
+ <% Album.all.each do |album_thing| %>
+	 <option value="<%= album_thing.id %>" <%= "selected" if album==album_thing %>><%= album_thing.name %></option>
+ <% end %>
+ </select>
+ <br>
+
+ Track type:<br>
+ <input type="radio" name="track[track_type]"
+ value="regular" id="track_track_type_regular"
+ <%= "checked" if track.track_type == "regular" %>>
+
+ <label for="track_track_type_regular">Regular</label>
+ <br>
+
+ <input type="radio" name="track[track_type]"
+ id="track_track_type_bonus" value="bonus"
+  <%= "checked" if track.track_type == "bonus" %>>
+
+ <label for="track_track_type_bonus">Bonus</label>
  <br>
  <input type="submit" value="Save Track">
 </form>
