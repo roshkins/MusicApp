@@ -1,0 +1,13 @@
+<form action="<%= album.id.nil? ? band_albums_url(band) : album_url(album) %>" method="post">
+	<% if album.id %>
+	<input type="hidden" name= "_method" value= "put">
+	<% end %>
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+ <label for="album_name">album name: </label>
+ <input
+	 type="text" name="album[name]" id="album_name"
+	 value="<%= album.name %>">
+	 <br>
+
+ <input type="submit" value="Save album">
+</form>

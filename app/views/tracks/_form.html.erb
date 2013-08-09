@@ -1,0 +1,19 @@
+<form action="<%= track.id.nil? ? album_tracks_url(album) : track_url(track) %>" method="post">
+	<% if track.id %>
+	<input type="hidden" name= "_method" value= "put">
+	<% end %>
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+ <label for="track_name">Track name: </label>
+ <input
+	 type="text" name="track[name]" id="track_name"
+	 value="<%= track.name %>">
+	 <br>
+ <label for="track_lyrics">Lyrics:</label>
+ <textarea name="track[lyrics]" id="track_lyrics"><%= track.lyrics %> </textarea>
+ <br>
+ <label for="track_story">Story:</label>
+ <input type="text" id="track_story" name="track[story]" value="
+ <%= track.story %>">
+ <br>
+ <input type="submit" value="Save Track">
+</form>

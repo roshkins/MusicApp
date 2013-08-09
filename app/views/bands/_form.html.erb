@@ -1,0 +1,12 @@
+<form action="<%= band.id.nil? ? bands_url : band_url(band) %>" method="post">
+	<% unless band.id.nil? %>
+	<input type="hidden" name= "_method" value= "put">
+	<% end %>
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+ <label for="band_name">band name: </label>
+ <input
+	 type="text" name="band[name]" id="band_name"
+	 value="<%= band.name %>">
+	 <br>
+ <input type="submit" value="Save the band!">
+</form
