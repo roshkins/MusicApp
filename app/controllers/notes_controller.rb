@@ -1,7 +1,8 @@
 class NotesController < ApplicationController
   def create
     current_user = {:id => 1}
-    note = Note.new(params[:note])
+    track = Track.find(params[:track_id])
+    note = track.notes.new(params[:note])
     note.user_id = current_user[:id]
     if note.save
       redirect_to track_url(note.track)
@@ -11,7 +12,7 @@ class NotesController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     note = Note.find(params[:id])
     if note.destroy
       redirect_to :back

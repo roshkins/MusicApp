@@ -1,6 +1,7 @@
 MusicApp::Application.routes.draw do
 
   only_stuff = [:new, :create]
+  resources :users,:only => only_stuff
   resources :bands do
     resources :albums, :only => only_stuff
   end
@@ -10,5 +11,7 @@ MusicApp::Application.routes.draw do
   resources :tracks, :except => only_stuff + [:index] do
     resources :notes, :only => only_stuff - [:new]
   end
-  resources :notes, :only => [:delete]
+  resources :notes, :only => [:destroy]
+
+  resource :session :only => only_stuff + [:destroy]
 end

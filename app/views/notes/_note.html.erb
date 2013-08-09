@@ -1,17 +1,7 @@
-
-<% track.notes.each do |note|%>
 <%= note.note %>
 <br>
-<%= note.user %>
+<%#= note.user %>
 <%= button_to "Delete note", note_url(note), :method => :delete, :confirm => "Embarrassed?"%>
 <br>
-<% end %>
 
-<form action="<%= track_notes_url(track) %>" method="post">
-  <input type="hidden"
-          name="authenticity_token"
-          value="<%= form_authenticity_token %>">
-	<label for='note_note'>Enter your note, plz:</label>
-	<textarea name="note[note]" id="note_note"></textarea>
-	<input type="submit" value="Abandon your note">
-</form>
+
