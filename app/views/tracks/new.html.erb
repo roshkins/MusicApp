@@ -1,4 +1,4 @@
 <h1> Create a new track! </h1>
-<%= render :partial => "form", :locals => {:track => @track} %>
+<%= render :partial => "form", :locals => {:track => @track, :album => @album} %>
 
-<a href="<%= albums_url %>">Lost? Go back!</a>
+<a href="<%= album_url(@album) %>">Lost? Go back!</a>
