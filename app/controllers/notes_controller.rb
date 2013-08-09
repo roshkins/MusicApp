@@ -1,6 +1,8 @@
 class NotesController < ApplicationController
   def create
-    note = Note.new(params[note])
+    current_user = {:id => 1}
+    note = Note.new(params[:note])
+    note.user_id = current_user[:id]
     if note.save
       redirect_to track_url(note.track)
     else

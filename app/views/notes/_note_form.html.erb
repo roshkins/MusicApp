@@ -1,12 +1,3 @@
-
-<% track.notes.each do |note|%>
-<%= note.note %>
-<br>
-<%= note.user %>
-<%= button_to "Delete note", note_url(note), :method => :delete, :confirm => "Embarrassed?"%>
-<br>
-<% end %>
-
 <form action="<%= track_notes_url(track) %>" method="post">
   <input type="hidden"
           name="authenticity_token"
