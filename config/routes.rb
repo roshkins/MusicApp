@@ -13,5 +13,5 @@ MusicApp::Application.routes.draw do
   end
   resources :notes, :only => [:destroy]
 
-  resource :session :only => only_stuff + [:destroy]
+  resource :session, :only => only_stuff + [:destroy]
 end
